@@ -13,6 +13,8 @@ A simple AWS infrastructure setup with:
 **Key modules used:**
 - [terraform-aws-modules/vpc](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest)
 
+**Estimated monthly cost:** $54-$62 USD (see [aws-vpc-example/costs.md](aws-vpc-example/costs.md) for details)
+
 ## 2. Azure AKS Example
 
 An Azure Kubernetes Service deployment with:
@@ -24,6 +26,8 @@ An Azure Kubernetes Service deployment with:
 - [Azure/network/azurerm](https://registry.terraform.io/modules/Azure/network/azurerm/latest)
 - [Azure/aks/azurerm](https://registry.terraform.io/modules/Azure/aks/azurerm/latest)
 
+**Estimated monthly cost:** $100-$247 USD (see [azure-aks-example/costs.md](azure-aks-example/costs.md) for details)
+
 ## 3. GCP Storage Example
 
 A Google Cloud Platform storage setup with:
@@ -33,6 +37,8 @@ A Google Cloud Platform storage setup with:
 **Key modules used:**
 - [terraform-google-modules/cloud-storage/google](https://registry.terraform.io/modules/terraform-google-modules/cloud-storage/google/latest)
 - [terraform-google-modules/cloudfunctions/google](https://registry.terraform.io/modules/terraform-google-modules/cloudfunctions/google/latest)
+
+**Estimated monthly cost:** ~$3 USD (see [gcp-storage-example/costs.md](gcp-storage-example/costs.md) for details)
 
 ## Prerequisites
 
@@ -84,6 +90,27 @@ Each example includes default values in its `variables.tf` file. You can overrid
 3. Setting environment variables prefixed with `TF_VAR_`
 4. Passing variable values on the command line with the `-var` flag
 
+## Cost Estimation
+
+This repository includes detailed cost estimates for each example project:
+
+- Each project directory contains a `costs.md` file with estimated monthly costs and cost-saving recommendations
+- The repository includes Infracost configuration files for generating more accurate estimates
+- See the [cost-estimation](cost-estimation/) directory for more information on cost analysis tools
+
+To generate cost estimates with Infracost:
+
+```bash
+# Install Infracost (https://www.infracost.io/docs/)
+
+# For a specific project
+cd aws-vpc-example
+infracost breakdown --path .
+
+# For all projects in the repository
+infracost breakdown --config-file infracost-config.yml
+```
+
 ## Important Notes
 
 - These examples create real resources in your cloud accounts which may incur costs
@@ -97,7 +124,8 @@ Each example includes default values in its `variables.tf` file. You can overrid
 terraform-examples/
 ├── aws-vpc-example/         # AWS VPC with public and private subnets
 ├── azure-aks-example/       # Azure Kubernetes Service deployment
-└── gcp-storage-example/     # GCP storage buckets and Cloud Function
+├── gcp-storage-example/     # GCP storage buckets and Cloud Function
+└── cost-estimation/         # Cost estimation tools and documentation
 ```
 
 ## Contributing
