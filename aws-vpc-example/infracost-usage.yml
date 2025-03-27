@@ -1,0 +1,10 @@
+version: 0.1
+resource_usage:
+  module.vpc.aws_nat_gateway.this[0]:
+    monthly_data_processed_gb: 400
+  
+  aws_instance.example[0]:
+    operating_system: linux
+    reserved_instance_type: ""
+    monthly_cpu_credit_hrs: 0
+    vcpu_count: 2

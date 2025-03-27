@@ -1,0 +1,17 @@
+version: 0.1
+
+# This is a repository-level Infracost configuration file
+# It includes all projects for a complete cost estimation
+
+projects:
+  - path: ./aws-vpc-example
+    name: AWS VPC Example
+    usage_file: ./aws-vpc-example/infracost-usage.yml
+  
+  - path: ./azure-aks-example
+    name: Azure AKS Example
+    usage_file: ./azure-aks-example/infracost-usage.yml
+  
+  - path: ./gcp-storage-example
+    name: GCP Storage Example
+    usage_file: ./gcp-storage-example/infracost-usage.yml

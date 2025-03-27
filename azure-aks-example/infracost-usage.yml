@@ -1,0 +1,4 @@
+version: 0.1
+resource_usage:
+  module.aks.azurerm_kubernetes_cluster.main:
+    monthly_outbound_data_gb: 1000
