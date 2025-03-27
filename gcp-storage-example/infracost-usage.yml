@@ -1,0 +1,11 @@
+version: 0.1
+resource_usage:
+  module.cloud_storage.google_storage_bucket.buckets["example-data"]:
+    storage_gb: 50
+    monthly_class_a_operations: 100000
+    monthly_class_b_operations: 400000
+  
+  module.cloud_function.google_cloudfunctions_function.function:
+    monthly_invocations: 2000000
+    monthly_compute_seconds: 1000000
+    average_response_size_kb: 128
