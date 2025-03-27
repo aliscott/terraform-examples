@@ -1,0 +1,11 @@
+{
+  "name": "storage-trigger-function",
+  "version": "0.0.1",
+  "description": "Example Cloud Function triggered by Cloud Storage events",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "private": true
+}
